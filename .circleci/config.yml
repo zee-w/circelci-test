@@ -40,7 +40,7 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests
-          command: $(npm bin)/cypress run --spec cypress\\integration\\test.spec.js
+          command: $(npm bin)/cypress run --spec \"cypress/integration/test.spec.js\"
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
