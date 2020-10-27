@@ -1,0 +1,22 @@
+{
+  "name": "circleciwithcypress",
+  "version": "1.0.0",
+  "description": "Circle CI tests with Cypress & Cyress Dashboards",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "./node_modules/.bin/cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zee-w/circelci-test.git"
+  },
+  "author": "zee-w",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zee-w/circelci-test/issues"
+  },
+  "homepage": "https://github.com/zee-w/circelci-test#readme",
+  "devDependencies": {
+    "cypress": "^5.5.0"
+  }
+}
