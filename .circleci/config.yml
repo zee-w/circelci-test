@@ -27,7 +27,7 @@ jobs:
           paths:
             - .cache
             - tmp
-  test:
+  test1:
     working_directory: ~/tmp
     docker:
       - image: 'cypress/base:10'
@@ -40,7 +40,25 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests
-          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff
+          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff --spec cypress/integration/test1.spec.js
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
+  test2:
+    working_directory: ~/tmp
+    docker:
+      - image: 'cypress/base:10'
+        environment:
+          TERM: xterm
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: ls -la cypress
+      - run: ls -la cypress/integration
+      - run:
+          name: Running cypress tests
+          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff --spec cypress/integration/test2.spec.js
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
@@ -51,6 +69,9 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test:
+      - test1:
+          requires:
+            - build
+      - test2:
           requires:
             - build
