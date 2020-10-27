@@ -40,7 +40,7 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests
-          command: $(npm bin)/cypress run
+          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
