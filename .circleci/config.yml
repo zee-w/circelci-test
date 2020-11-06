@@ -77,6 +77,7 @@ jobs:
       - run:
           name: Running cypress tests 3
           command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff --parallel
+      - store_artifacts:
           path: cypress/videos
       - store_artifacts:
           path: cypress/screenshots
