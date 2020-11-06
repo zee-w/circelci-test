@@ -40,7 +40,7 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests 1
-          command: $(npm bin)/cypress run --spec cypress/integration/01_login.spec.js
+          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff --parallel --spec cypress/integration/01_login.spec.js
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
@@ -58,7 +58,7 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests 2
-          command: $(npm bin)/cypress run --spec cypress/integration/02_cmsPages.spec.js
+          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff --parallel --spec cypress/integration/02_cmsPages.spec.js
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
@@ -76,7 +76,7 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests 3
-          command: $(npm bin)/cypress run --spec cypress/integration/03_GeneralSettings.spec.js
+          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff --parallel --spec cypress/integration/03_GeneralSettings.spec.js
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
@@ -94,7 +94,7 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests 4
-          command: $(npm bin)/cypress run --spec cypress/integration/04_Accounts.spec.js
+          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff --parallel --spec cypress/integration/04_Accounts.spec.js
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
