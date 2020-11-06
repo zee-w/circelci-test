@@ -7,6 +7,7 @@ jobs:
       - image: 'cypress/base:10'
         environment:
           TERM: xterm
+    parallelism: 4
     steps:
       - checkout
       - run: pwd
@@ -40,7 +41,7 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests
-          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff --parallel
+          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff --parallel --spec cypress/integration/test1.spec.js
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
@@ -58,7 +59,7 @@ jobs:
       - run: ls -la cypress/integration
       - run:
           name: Running cypress tests
-          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff --spec cypress/integration/test2.spec.js
+          command: $(npm bin)/cypress run --record --key c87b68a2-c641-424c-84df-e37c67b5fdff --parallel --spec cypress/integration/test2.spec.js
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
