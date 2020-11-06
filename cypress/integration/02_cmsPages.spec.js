@@ -1,5 +1,5 @@
-describe("Test Suite2", ()=>{
-    it("Test Case2", ()=>{
+describe("Cms Suite", ()=>{
+    it("Cms Case2", ()=>{
         cy.log('Visiting Google Second time')
         cy.visit('https://www.google.com')
     })
